@@ -21,10 +21,12 @@ public class ContaPoupanca extends Conta {
 
 	public void rendimento() {
 		System.out.println("--------------Rendimento ao longo dos meses---------------");
-		String[] meses = {"janeiro", "fevereiro", "março", "abril", "maio", "junho"};
+		String[] meses = {"janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"};
 		
 		for(int i=0; i < meses.length; i++) {
-			this.setSaldo((this.getSaldo() * this.rendimento) + this.getSaldo());
+			if(this.getSaldo() > 0) {
+				this.setSaldo((this.getSaldo() * this.rendimento) + this.getSaldo());
+			}
 			System.out.println("seu novo saldo com rendimento do mes de " + meses[i] + " é: R$" + this.getSaldo());
 		}
 	}
